@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Ingresar un modelo</h1>
+  </div>
+</div>
+
+<form ng-submit="ctrl.addModel()">
+  <div class="row">
+
+    <div class="col-md-3">
+
+      <label for="name">Nombre</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="name"
+        required
+        ng-model="ctrl.newModel.name">
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="brand">Marca</label>
+
+      <select class="form-control"
+        name="brand"
+        id="brand"
+        required
+        ng-model="ctrl.newModel.brand"
+        ng-options="brand as brand.name for brand in ctrl.catalogs.brands">
+        <option value=""
+          disabled>SELECCIONAR</option>
+      </select>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="type">Tipo</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="type"
+        required
+        placeholder="Ej. Sedan, Suv, etc..."
+        ng-model="ctrl.newModel.type">
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="engine">Tanaño de motor</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="engine"
+        required
+        placeholder="Ej. 1.5L, 3.0L, etc..."
+        ng-model="ctrl.newModel.engine">
+
+    </div>
+
+  </div>
+
+  <div class="row mt-4">
+
+    <div class="col-md-3">
+
+      <label for="traction">Tracción</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="traction"
+        required
+        ng-model="ctrl.newModel.traction">
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="horsePower">Caballos de fuerza</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="horsePower"
+        required
+        ng-model="ctrl.newModel.horsePower">
+
+    </div>
+
+  </div>
+
+  <div class="row pt-5 pb-3">
+    <div class="col-md-2 offset-md-5">
+
+      <button class=" form-control btn btn-primary"
+        type="submit">
+        Guardar Datos
+      </button>
+
+    </div>
+  </div>
+</form>

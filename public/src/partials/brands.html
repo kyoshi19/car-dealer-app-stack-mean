@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Actualizar marcas</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 offset-md-1 " >
+
+    <table class="table bg-white">
+      <caption>Listado de marcas</caption>
+      <thead>
+        <tr class="text-center">
+          <th id="code">N°</th>
+          <th id="name">Nombre</th>
+          <th id="country">País</th>
+          <th id="owner">Propietario</th>
+          <th id="stock">Modelos</th>
+          <th id="stock">Autos</th>
+          <th id="edit">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center"
+          ng-repeat="brand in ctrl.brands track by $index">
+
+          <th id="code">{{brand.id}}</th>
+          <td>{{brand.name}}</td>
+          <td>{{brand.country}}</td>
+          <td>{{brand.owner}}</td>
+          <td>{{brand.modelsCount}}</td>
+          <td>{{brand.carsCount}}</td>
+
+          <td>
+
+            <a href="#!/models/{{brand.id}}">
+              <em class="fas fa-cogs m-1 text-warning" data-toggle="tooltip" title="Ver modelos"></em>
+            </a>
+            
+            <a href="#!/cars/{{brand.id}}">
+              <em class="fas fa-car-side m-1 text-success" data-toggle="tooltip" title="Ver autos"></em>
+            </a>
+            
+            <a href="#!/cars/{{brand.id}}">
+              <em class="fas fa-times m-1 text-danger" data-toggle="tooltip" title="Eliminar marca"></em>
+            </a>
+            
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="row pb-3">
+  <div class="col-md-3 offset-md-9">
+    <button class=" form-control btn btn-primary"
+      ng-click="ctrl.toInsert()"> Agregar nueva marca</button>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Ingresar una marca</h1>
+  </div>
+</div>
+
+<form ng-submit="ctrl.addBrand()">
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <label for="name">Nombre</label>
+      <input class="form-control"
+        type="text"
+        id="name"
+        required
+        ng-model="ctrl.newBrand.name">
+
+    </div>
+
+    <div class="col-md-4">
+
+      <label for="country">País</label>
+      <input class="form-control"
+        type="text"
+        id="country"
+        required
+        ng-model="ctrl.newBrand.country">
+
+    </div>
+
+    <div class="col-md-4">
+
+      <label for="owner">Dueño</label>
+      <input class="form-control"
+        type="text"
+        id="owner"
+        required
+        ng-model="ctrl.newBrand.owner">
+
+    </div>
+
+  </div>
+
+  <div class="row pt-5 pb-3">
+    <div class="col-md-2 offset-md-5">
+
+      <button class=" form-control btn btn-primary"
+        type="submit">
+        Guardar Datos
+      </button>
+
+    </div>
+  </div>
+<form>

@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Actualizar modelos</h1>
+  </div>
+</div>
+
+<div class="row"
+  ng-if="ctrl.codigo == 'all'">
+
+  <div class="col-md-3 offset-md-1">
+    <label for="br">Marca</label>
+    <input class="form-control"
+      autocomplete="off"
+      id="br"
+      type="text"
+      ng-model="ctrl.filter.brand.name"
+      placeholder="Busqueca por marca...">
+  </div>
+
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+
+    <table class="table bg-white">
+      <caption>Listado de modelos</caption>
+      <thead>
+        <tr class="text-center">
+          <th id="code">N°</th>
+          <th id="name">Nombre</th>
+          <th id="brand">Marca</th>
+          <th id="type">Tipo de auto</th>
+          <th id="engine">Tipo de motor</th>
+          <th id="traction">Tracción</th>
+          <th id="hp">Caballos de fuerza</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="text-center"
+          ng-repeat="model in ctrl.models | filter:ctrl.filter track by $index">
+
+          <th id="code">{{model.id}}</th>
+          <td>{{model.name}}</td>
+          <td>{{model.brand.name}}</td>
+          <td>{{model.type}}</td>
+          <td>{{model.engine}}</td>
+          <td>{{model.traction}}</td>
+          <td>{{model.horsePower}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<div class="row"
+  ng-if="ctrl.codigo != 'all'">
+  <div class="col-md-2 offset-md-9">
+    <button class=" form-control btn btn-primary"
+      ng-click="ctrl.viewAll()"> VER TODOS</button>
+  </div>
+</div>
+
+<br>
+
+<div class="row pb-3">
+  <div class="col-md-3 offset-md-9">
+    <button class=" form-control btn btn-primary"
+      ng-click="ctrl.toInsert()"> Agregar nuevo modelo</button>
+  </div>
+</div>

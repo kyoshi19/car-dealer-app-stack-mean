@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Ingresar un modelo</h1>
+  </div>
+</div>
+
+<form ng-submit="ctrl.addModel()">
+  <div class="row">
+
+    <div class="col-md-3">
+
+      <label for="brand">Marca</label>
+
+      <select class="form-control"
+        name="brand"
+        id="brand"
+        required
+        ng-model="ctrl.newCar.brand"
+        ng-options="brand as brand.name for brand in ctrl.catalogs.brands">
+        <option value=""
+          disabled>SELECCIONAR</option>
+      </select>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="brand">Modelo</label>
+
+      <select class="form-control"
+        name="brand"
+        id="brand"
+        required
+        ng-disabled = "ctrl.newCar.brand ? false:true"
+        ng-model="ctrl.newCar.model"
+        ng-options="brand as brand.name for brand in ctrl.catalogs.models | filter:{'brand':ctrl.newCar.brand.id}">
+        <option value=""
+          disabled>SELECCIONAR</option>
+      </select>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="type">Color</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="type"
+        required
+        placeholder="Ej. Rojo, Blanco, etc..."
+        ng-model="ctrl.newCar.color">
+
+    </div>
+
+    <div class="col-md-3">
+
+      <label for="engine">Año</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="engine"
+        required
+        placeholder="Ej. 2018, 2020, etc..."
+        ng-model="ctrl.newCar.year">
+
+    </div>
+
+  </div>
+
+  <div class="row mt-4">
+
+    <div class="col-md-3">
+
+      <label for="traction">Precio</label>
+      <input class="form-control"
+        autocomplete="off"
+        type="text"
+        id="traction"
+        placeholder="0.00"
+        ng-pattern="/^[0-9]+\.?[0-9]*$/"
+        required
+        ng-model="ctrl.newCar.price">
+
+    </div>
+
+  </div>
+
+  <div class="row pt-5 pb-3">
+    <div class="col-md-2 offset-md-5">
+
+      <button class=" form-control btn btn-primary"
+      ng-disabled="ctrl.isAddingCar"
+        type="submit">
+        Guardar Datos
+      </button>
+
+    </div>
+  </div>
+</form>
