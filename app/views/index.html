@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es"
+  ng-app="carDealerApp"
+  ng-controller="masterCtrl as mctrl">
+
+  <head>
+
+    <meta http-equiv="Content-Type"
+      content="text/html; charset=UTF-8" />
+    <title>Inventario de autos</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+      href="libs/bootstrap/css/bootstrap.css">
+    <script src="libs/bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Animate -->
+    <link rel="stylesheet"
+      href="libs/animate/animate.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="libs/fontawesome-free/css/all.css">
+
+    <!-- Dependencias angualar -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular/angular-route.min.js"></script>
+
+    <!-- ANGULARJS -->
+    <script src="src/js/controllers/master-controler.js"></script>
+    <script src="src/js/controllers/brands-controller.js"></script>
+    <script src="src/js/controllers/models-controller.js"></script>
+    <script src="src/js/controllers/cars-controller.js"></script>
+    <script src="src/js/config.js"></script>
+
+  </head>
+
+  <body>
+
+    <div ng-include="mctrl.headerTemplate"></div>
+    <br>
+    <div class="container bg-dark text-white">
+
+      <div ng-view></div>
+
+    </div>
+
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+  </body>
+
+</html>
